@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="mt-4">
+    <h2>Editar Productos</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="producto">Nombre</label>
+            <input type="text" class="form-control" id="producto" name="producto" value="{{ product[1] }}"  required>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" value="{{ product[2] }}"  required>
+        </div>
+        <div class="form-group">
+            <label for="precio">Precio</label>
+            <input type="text" class="form-control" id="precio" name="precio" value="{{ product[3] }}"  required>
+        </div>
+
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <input type="text" class="form-control" id="stock" name="stock" value="{{ product[4] }}"  required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Actualizar Producto</button>
+    </form>
+</div>
+{% endblock %}

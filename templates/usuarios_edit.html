@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="mt-4">
+    <h2>Editar Proveedor</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="nombre">Nombres</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ product[1] }}" required>
+        </div>
+        <div class="form-group">
+            <label for="nombre">Contacto</label>
+            <input type="text" class="form-control" id="contacto" name="contacto" value="{{ product[2] }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" value="{{ product[3] }}" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Editar Proveedor</button>
+    </form>
+</div>
+{% endblock %}
