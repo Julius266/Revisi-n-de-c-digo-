@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="mt-4">
+    <h2>Editar Préstamo</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="id_libro">Libro</label>
+            <select  class="form-control" id="id_libro" name="id_libro" required>
+                {% for libro in libros %}
+                <option value="{{ libro[0] }}">{{ libro[1] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="id_usuario">Nombre del Prestatario</label>
+            <select class="form-control" id="id_usuario" name="id_usuario" required>
+                {% for usuarioId, usuName in usuarios %}
+                <option value="{{ usuarioId }}">{{ usuName }} </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fecha_prestamo">Fecha de Préstamo</label>
+            <input type="date" class="form-control" id="fecha_prestamo" name="fecha_prestamo" value="{{ book[3] }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fecha_dev">Fecha de Devolución</label>
+            <input type="date" class="form-control" id="fecha_dev" name="fecha_dev" value="{{ book[4] }}" required>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Editar Prestamo</button>
+    </form>
+</div>
+{% endblock %}
