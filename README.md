@@ -12,7 +12,7 @@ Esta es una aplicación de gestión de inventario desarrollada utilizando Flask 
 1. Clona este repositorio:
 
    ```bash
-   git clone <URL_del_repositorio>
+   git clone https://github.com/Julius266/Revisi-n-de-c-digo-.git
    ```
 2. Activación de entorno virtual:
 
