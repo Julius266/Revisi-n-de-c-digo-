@@ -1,10 +1,14 @@
 # Aplicación de Gestión de Inventario
 
-Esta es una aplicación de gestión de inventario desarrollada utilizando Flask y Pyvenv.
+Esta es una aplicación de gestión de inventario desarrollada utilizando Flask.
+## Crear base de datos
+
+1. Crear una base de datos en Mysql con el archivo proporcionado en el git hub:
+   (iamgen)
 
 ## Requisitos
 
-- Python 3.x
+- Python 3.9.x
 - pip (instalado con Python por defecto)
 
 ## Instalación
