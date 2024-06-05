@@ -1,27 +1,23 @@
 {% extends 'layout.html' %}
 {% block content %}
 <div class="mt-4">
-    <h2>Editar Usuario</h2>
+    <h2>Editar Proveedor</h2>
     <form method="post">
         <div class="form-group">
-            <label for="apellido">Apellidos</label>
-            <input type="text" class="form-control" id="apellido" name="apellido" value="{{ book[0] }}" required>
-        </div>
-        <div class="form-group">
             <label for="nombre">Nombres</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ book[1] }}" required>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ product[1] }}" required>
         </div>
         <div class="form-group">
-            <label for="correo">correo</label>
-            <input type="text" class="form-control" id="correo" name="correo" value="{{ book[2] }}" required>
+            <label for="nombre">Contacto</label>
+            <input type="text" class="form-control" id="contacto" name="contacto" value="{{ product[2] }}" required>
         </div>
 
         <div class="form-group">
-            <label for="fono">Teléfono</label>
-            <input type="text" class="form-control" id="fono" name="fono" value="{{ book[3] }}" required>
+            <label for="telefono">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" value="{{ product[3] }}" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Editar Usuario</button>
+        <button type="submit" class="btn btn-primary">Editar Proveedor</button>
     </form>
 </div>
 {% endblock %}

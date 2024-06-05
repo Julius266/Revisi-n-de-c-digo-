@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Compras</h2>
+        
+        <form method="post" action="/compras/agregar">
+            <div class="form-group">
+                <label for="id">Producto</label>
+                <select  class="form-control" id="id_product" name="id_product" required>
+                    {% for productoId, productoName in productos %}
+                    <option value="{{ productoId }}">{{ productoName }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id">Nombre del Proveedor</label>
+                <select class="form-control" id="id_proovedor" name="id_proovedor" required>
+                    {% for proovedorId, proveedorName in usuarios %}
+                    <option value="{{ proovedorId }}">{{ proveedorName }} </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha de la Compra</label>
+                <input type="date" class="form-control" id="fecha" name="fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="id">Cantidad de la Compra</label>
+                <input type="text" class="form-control" id="cantidad" name="cantidad" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Compra</button>
+        </form>
+        
+        <h3 class="mt-5">Listado de Compras</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Producto</th>
+                    <th>Proovedor</th>
+                    <th>Fecha de Compra</th>
+                    <th>Cantidad de Compra</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for compra in compras %}
+                <tr>
+                    <td>{{ compra[0] }}</td>
+                    <td>{{ compra[1] }}</td>
+                    <td>{{ compra[2] }}</td>
+                    <td>{{ compra[3] }}</td>
+                    <td>{{ compra[4] }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_compra', id=compra[0]) }}" class="btn btn-info">Editar</a>
+                        <form action="{{ url_for('delete_pres', id=compra[0]) }}" method="post" style="display:inline-block;">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+{% endblock %}

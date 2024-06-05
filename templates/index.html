@@ -1,32 +1,28 @@
 {% extends 'layout.html' %}
 {% block content %}
 <div class="mt-4">
-    <a href="{{ url_for('add_book') }}" class="btn btn-primary">Agregar Libro</a>
+    <a href="{{ url_for('add_product') }}" class="btn btn-primary">Agregar Producto</a>
     <table class="table table-striped mt-4">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Título</th>
-                <th>Autor</th>
-                <th>Editorial</th>
-                <th>Año de Publicación</th>
-                <th>Genero</th>
-                <th>Cantidad Disponible</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
             </tr>
         </thead>
         <tbody>
-            {% for book in books %}
+            {% for product in products %}
             <tr>
-                <td>{{ book[0] }}</td>
-                <td>{{ book[1] }}</td>
-                <td>{{ book[2] }}</td>
-                <td>{{ book[3] }}</td>
-                <td>{{ book[4] }}</td>
-                <td>{{ book[5] }}</td>
-                <td>{{ book[6] }}</td>
+                <td>{{ product[0] }}</td>
+                <td>{{ product[1] }}</td>
+                <td>{{ product[2] }}</td>
+                <td>{{ product[3] }}</td>
+                <td>{{ product[4] }}</td>
                 <td>
-                    <a href="{{ url_for('edit_book', id=book[0]) }}" class="btn btn-info">Editar</a>
-                    <form action="{{ url_for('delete_book', id=book[0]) }}" method="post" style="display:inline-block;">
+                    <a href="{{ url_for('edit_product', id=producto[0]) }}" class="btn btn-info">Editar</a>
+                    <form action="{{ url_for('delete_product', id=producto[0]) }}" method="post" style="display:inline-block;">
                         <button type="submit" class="btn btn-danger">Eliminar</button>
                     </form>
                 </td>
